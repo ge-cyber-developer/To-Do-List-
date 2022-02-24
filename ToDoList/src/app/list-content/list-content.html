@@ -1,0 +1,12 @@
+<ul class="list-content">
+  <li class="item"
+    *ngFor= "let item of items"
+    [ngClass]="{'style-done': item.feito == true}"
+  >
+    <div><input type="checkbox" [(ngModel)]="item.feito"  (click)= "showTarefas()">
+    {{item.name}} </div> <button class="remove-button" (click)= "removeTarefa(item)">Remover</button> <!-- (click)= "removeTarefa(item)" = Binding Event => adicionamos uma função ao evento  -->
+  </li>
+  <ng-container *ngIf="items.length == 0">
+    <p>Não tem nenhuma tarefa na sua lista!</p>
+  </ng-container>
+</ul>
