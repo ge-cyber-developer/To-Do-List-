@@ -21,9 +21,14 @@ export class ListContent{
   itemsMudaram = new EventEmitter();
 
   @Output() removeItem = new EventEmitter();
-
+  @Output() editItem = new EventEmitter();
+  @Output() saveItem = new EventEmitter();
 
   public items : Array<Item> = [];
+  public isEditing : Boolean = false;
+  public editionItem : string = "";
+
+
 
 
   ngOnInit() {
@@ -44,6 +49,21 @@ export class ListContent{
 
   removeTarefa( item : Item){
     this.removeItem.emit(item)
+  }
+
+
+  editTarefa(item: Item)
+  {
+    this.isEditing = true;
+    this.editItem.emit(item)
+
+  }
+
+  saveTarefa(edition : string)
+  {
+    console.log(this.editionItem);
+    this.saveItem.emit(edition);
+    this.isEditing = false;
   }
 
 

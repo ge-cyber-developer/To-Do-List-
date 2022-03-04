@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "GitHub.copilot-nightly"
+        "github.copilot-nightly",
+        "esbenp.prettier-vscode"
     ]
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
-import { ListContent } from '../list-content/list-content'
+import { ListContent } from '../list-content/list-content';
 
 export type Item = {
   feito: boolean;
@@ -7,13 +7,13 @@ export type Item = {
 }
 
 
+
+
 @Component({
   selector:'app-todolist',
   templateUrl:'./todolist.html',
   styleUrls: ['todolist.css'],
 })
-
-
 
 
 export class ToDoList {
@@ -25,6 +25,7 @@ export class ToDoList {
     { name: 'item3', feito: false },
   ];
   public itemsMudaram = new EventEmitter();
+
 
 
   ngOnInit() {
@@ -46,6 +47,21 @@ export class ToDoList {
     this.itemsMudaram.emit(this.items);
   }
 
+  public localizacaoItem : number = 0;
+
+  editTarefa(tarefa : Item)
+  {
+    this.localizacaoItem = this.items.indexOf(tarefa);
+    console.log(this.localizacaoItem);
+  }
+
+  saveTarefa(edition : string)
+  {
+    console.log(this.localizacaoItem);
+    this.items[this.localizacaoItem].name = edition;
+    this.itemsMudaram.emit(this.items);
+  }
+
   removeTarefa(itemASerDeletado: Object){
     this.items = this.items.filter((itemNoArray) => {
       if (itemNoArray != itemASerDeletado){
@@ -57,5 +73,6 @@ export class ToDoList {
 
     this.itemsMudaram.emit(this.items);
   }
+
 
 }

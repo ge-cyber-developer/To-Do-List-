@@ -12,7 +12,7 @@ import { AddItem } from './add-item/add-item';
     AppComponent,
     ToDoList,
     ListContent,
-    AddItem
+    AddItem,
   ],
   imports: [
     BrowserModule,
