@@ -12,5 +12,6 @@ import { AddItem } from './add-item/add-item';
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}
