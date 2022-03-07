@@ -1,22 +1,16 @@
-import { Component, Input, EventEmitter, Output } from "@angular/core";
-
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 export type Item = {
   feito: boolean;
   name: string;
-}
-
-
+};
 
 @Component({
-  selector:'list-content',
+  selector: 'list-content',
   templateUrl: './list-content.html',
-  styleUrls: ['list-content.css']
+  styleUrls: ['list-content.css'],
 })
-
-export class ListContent{
-
-
+export class ListContent {
   @Input()
   itemsMudaram = new EventEmitter();
 
@@ -24,47 +18,37 @@ export class ListContent{
   @Output() editItem = new EventEmitter();
   @Output() saveItem = new EventEmitter();
 
-  public items : Array<Item> = [];
-  public isEditing : Boolean = false;
-  public editionItem : string = "";
-
-
-
+  public items: Array<Item> = [];
+  public isEditing: Boolean = false;
+  public editionItem: string = '';
 
   ngOnInit() {
     if (this.itemsMudaram) {
-          //EVENTO     //SEMPRE Q ELE ACONTECER    //DADOS PASSADOS AO EMITIR EVENTO (dadosEnviadosQuandoFoiEmitido)
-      this.itemsMudaram.subscribe(dadosEnviadosQuandoFoiEmitido => { // SEMPRE QUE ESSE EVENTO OCORRER
+      //EVENTO     //SEMPRE Q ELE ACONTECER    //DADOS PASSADOS AO EMITIR EVENTO (dadosEnviadosQuandoFoiEmitido)
+      this.itemsMudaram.subscribe((dadosEnviadosQuandoFoiEmitido) => {
+        // SEMPRE QUE ESSE EVENTO OCORRER
 
-        this.items = dadosEnviadosQuandoFoiEmitido // OS ITEMS RECEBIDOS SÃO OS ITEMS DO FILHO (list-content)
+        this.items = dadosEnviadosQuandoFoiEmitido; // OS ITEMS RECEBIDOS SÃO OS ITEMS DO FILHO (list-content)
       });
     }
   }
 
-
-  showTarefas(){
-    console.log(this.items)
+  showTarefas() {
+    console.log(this.items);
   }
 
-
-  removeTarefa( item : Item){
-    this.removeItem.emit(item)
+  removeTarefa(item: Item) {
+    this.removeItem.emit(item);
   }
 
-
-  editTarefa(item: Item)
-  {
+  editTarefa(item: Item) {
     this.isEditing = true;
-    this.editItem.emit(item)
-
+    this.editItem.emit(item);
   }
 
-  saveTarefa(edition : string)
-  {
+  saveTarefa(edition: string) {
     console.log(this.editionItem);
     this.saveItem.emit(edition);
     this.isEditing = false;
   }
-
-
 }

@@ -1,28 +1,24 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
-
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export type Item = {
   feito: boolean;
   name: string;
-}
-
+};
 
 @Component({
-  selector:'add-item',
+  selector: 'add-item',
   templateUrl: './add-item.html',
-  styleUrls: ['add-item.css']
+  styleUrls: ['add-item.css'],
 })
-
-export class AddItem{
+export class AddItem {
   @Output() adicionarItems = new EventEmitter();
 
-  public tarefa = "";
+  public tarefa = '';
 
-  addTarefa(){
+  addTarefa() {
     this.adicionarItems.emit({
       name: this.tarefa,
-      feito: false
-    })
+      feito: false,
+    });
   }
-
 }

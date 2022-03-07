@@ -1,17 +1,14 @@
 <section>
-  <div class = "container-list">
+  <div class="container-list">
     <h3 class="titulo">Lista de Tarefas</h3>
 
     <list-content
-      [itemsMudaram] = "itemsMudaram"
+      [itemsMudaram]="itemsMudaram"
       (removeItem)="removeTarefa($event)"
       (editItem)="editTarefa($event)"
       (saveItem)="saveTarefa($event)"
     ></list-content>
 
-    <add-item
-      (adicionarItems)="addTarefa($event)"
-    ></add-item>
-
+    <add-item (adicionarItems)="addTarefa($event)"></add-item>
   </div>
 </section>

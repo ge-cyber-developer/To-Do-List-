@@ -8,17 +8,9 @@ import { ListContent } from './list-content/list-content';
 import { AddItem } from './add-item/add-item';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ToDoList,
-    ListContent,
-    AddItem,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  declarations: [AppComponent, ToDoList, ListContent, AddItem],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
