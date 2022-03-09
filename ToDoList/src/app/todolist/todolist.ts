@@ -27,13 +27,8 @@ export class ToDoList {
     }, 1000);
   }
 
-  showTarefas() {
-    console.log(this.items);
-  }
-
   addTarefa(tarefa: Item) {
     this.items.push(tarefa);
-
     this.itemsMudaram.emit(this.items);
   }
 

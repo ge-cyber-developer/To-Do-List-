@@ -33,10 +33,6 @@ export class ListContent {
     }
   }
 
-  showTarefas() {
-    console.log(this.items);
-  }
-
   removeTarefa(item: Item) {
     this.removeItem.emit(item);
   }

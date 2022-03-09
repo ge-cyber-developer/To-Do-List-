@@ -1,16 +1,12 @@
 <ul class="list-content">
-  <li
-    class="item"
-    *ngFor="let item of items"
-    [ngClass]="{'style-done': item.feito == true}"
-  >
-    <div>
-      <input
-        type="checkbox"
-        [(ngModel)]="item.feito"
-        (click)="showTarefas()"
-      />{{item.name}}
+  <li class="item" *ngFor="let item of items">
+    <div class="checkbox">
+      <input type="checkbox" [(ngModel)]="item.feito" />
+      <span [ngClass]="{'style-done': item.feito == true}">
+        {{item.name}}
+      </span>
     </div>
+
     <button class="remove-button" (click)="removeTarefa(item)">Remover</button>
     <!-- (click)= "removeTarefa(item)" = Binding Event => adicionamos uma função ao evento  -->
     <button class="edit-button" (click)="editTarefa(item)">Editar</button>
