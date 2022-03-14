@@ -19,6 +19,8 @@ export class AddItem {
     this.adicionarItems.emit({
       name: this.tarefa,
       feito: false,
+
+      
     });
   }
 }
