@@ -1,0 +1,65 @@
+.style-done {
+  text-decoration: line-through;
+}
+
+.list-content {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+}
+
+
+.item {
+  width: 18rem;
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(232, 232, 232);
+  border-radius: 5px;
+}
+
+.checkbox {
+  
+  white-space: nowrap;
+  width: 12em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item .remove-button {
+  border-radius: 5px;
+  position: static;
+  margin-right: 0.5rem;
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(204, 9, 9);
+  color: white;
+  font-weight: bold;
+}
+.edit-button {
+  border-radius: 5px;
+  margin-right: 0.5rem;
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  font-weight: bold;
+}
+.edit-style {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.edit-input {
+  border-radius: 5px;
+  height: 1rem;
+}
+.edit-save-button {
+  border-radius: 5px;
+  font-family: "Nunito", sans-serif;
+  margin: 0.5rem 0.5rem 2rem 0.5rem;
+  background-color: rgb(13, 218, 2);
+  color: white;
+  font-weight: bold;
+}

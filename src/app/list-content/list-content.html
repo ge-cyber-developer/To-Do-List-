@@ -1,0 +1,27 @@
+<ul class="list-content">
+  <li class="item" *ngFor="let item of items">
+    <div class="checkbox">
+      <input type="checkbox" [(ngModel)]="item.feito" />
+      <span [ngClass]="{'style-done': item.feito == true}">
+        {{item.name}}
+      </span>
+    </div>
+
+    <button class="remove-button" (click)="removeTarefa(item)">Remover</button>
+    <!-- (click)= "removeTarefa(item)" = Binding Event => adicionamos uma função ao evento  -->
+    <button class="edit-button" (click)="editTarefa(item)">Editar</button>
+  </li>
+  <ng-container *ngIf="items.length == 0">
+    <p>Não tem nenhuma tarefa na sua lista!</p>
+  </ng-container>
+
+  
+  <ng-container *ngIf="this.isEditing == true">
+    <div class="edit-style">
+      <input class="edit-input" type="text" [(ngModel)]="editionItem" />
+      <button class="edit-save-button" (click)="saveTarefa(editionItem)">
+        Salvar
+      </button>
+    </div>
+  </ng-container>
+</ul>
